@@ -1,3 +1,6 @@
+import { ProductList } from '@/components/ProductList'
+import { db } from '@/Database/mongodb'
+
 export const MainPage = () => {
-  return <div>This is MainPage</div>
+  return <ProductList db={db} />
 }

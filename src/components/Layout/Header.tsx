@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const Header = () => {
   return (
     <header className='flex justify-between py-8'>
-      <Link to='/' className='text-xl font-bold hover:opacity-60'>
+      <Link to='/' className='text-2xl font-bold hover:opacity-60'>
         QPICK
       </Link>
 
