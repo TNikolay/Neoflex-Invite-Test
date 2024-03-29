@@ -1,3 +1,6 @@
+.vite
+.vscode
+
 # Logs
 logs
 *.log
