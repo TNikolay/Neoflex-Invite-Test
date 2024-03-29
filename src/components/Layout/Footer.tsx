@@ -1,29 +1,30 @@
 import { Link } from 'react-router-dom'
 import { Button } from '../ui/button'
+import { BASE_URL } from '@/App'
 
 export const Footer = () => {
   return (
     <footer className='flex h-[149px] justify-between rounded-t-[30px] bg-white px-8 py-8'>
-      <Link to='/' className='text-2xl font-bold hover:opacity-60'>
+      <Link to={`${BASE_URL}/`} className='text-2xl font-bold hover:opacity-60'>
         QPICK
       </Link>
 
       <div className='flex flex-col gap-2'>
-        <Link to='/favorites' className='hover:opacity-60'>
+        <Link to={`${BASE_URL}/favorites`} className='hover:opacity-60'>
           Избранное
         </Link>
 
-        <Link to='/basket' className='hover:opacity-60'>
+        <Link to={`${BASE_URL}/basket`} className='hover:opacity-60'>
           Корзина
         </Link>
 
-        <Link to='/contacts' className='hover:opacity-60'>
+        <Link to={`${BASE_URL}/contacts`} className='hover:opacity-60'>
           Контакты
         </Link>
       </div>
 
       <div className='flex flex-col gap-2'>
-        <Link to='/policy' className='self-center hover:opacity-60'>
+        <Link to={`${BASE_URL}/policy`} className='self-center hover:opacity-60'>
           Условия сервиса
         </Link>
 
