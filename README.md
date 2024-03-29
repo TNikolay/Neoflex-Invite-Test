@@ -1,5 +1,9 @@
 # Тестовое задание для Neoflex
 
+## Деплой
+
+[https://tnikolay.github.io/Neoflex-Invite-Test/](https://tnikolay.github.io/Neoflex-Invite-Test/)
+
 ## Стек
 
 React, React router, Zustand, Tailwind, shadcn/ui
