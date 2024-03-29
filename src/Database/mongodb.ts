@@ -9,6 +9,7 @@ export const db: IDatabase = [
         img: 'Image-0',
         title: 'Apple BYZ S122',
         price: 2927,
+        priceBeforeDiscount: 9999,
         rate: 3.7,
       },
       {
@@ -37,6 +38,7 @@ export const db: IDatabase = [
         img: 'Image-1',
         title: 'Apple EarPods v.3',
         price: 4345,
+        priceBeforeDiscount: 5699,
         rate: 4.2,
       },
       {

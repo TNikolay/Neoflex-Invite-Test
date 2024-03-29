@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const ProductCard = ({ data }: IProps) => {
-  const { id, title, price, rate } = data
+  const { id, title, price, rate, priceBeforeDiscount } = data
   const img = `./ProductsImages/${data.img}.png`
 
   const addProduct = useBasketStore((state) => state.addProduct)
@@ -17,10 +17,12 @@ export const ProductCard = ({ data }: IProps) => {
     <div className='hover:border-1 flex h-[407px] w-[350px] flex-col items-center rounded-[30px] border bg-white px-5 py-2 text-xl font-bold hover:scale-110 hover:border-black'>
       <img src={img} className='my-auto' alt={title} />
 
-      <div className='my-6 flex w-full justify-between'>
-        <h2>{title}</h2>
-
-        <span className='text-[#FFB800]'>{formatPrice(price)}</span>
+      <div className='mt-6 flex w-full justify-between'>
+        <h2 className='mb-6'>{title}</h2>
+        <div className='flex flex-col'>
+          <div className='text-[#FFB800]'>{formatPrice(price)}</div>
+          {priceBeforeDiscount && <div className='self-center text-[13px] text-[#FFB800] line-through'>{formatPrice(price)}</div>}
+        </div>
       </div>
 
       <div className='mb-6 flex w-full justify-between'>

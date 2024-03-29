@@ -13,7 +13,7 @@ export const BasketCard = ({ data, count }: IProps) => {
   const decrementProduct = useBasketStore((state) => state.decrementProduct)
   const deleteProduct = useBasketStore((state) => state.deleteProduct)
 
-  const { title, price } = data
+  const { title, price, priceBeforeDiscount } = data
   const img = `./ProductsImages/${data.img}.png`
 
   return (
@@ -43,6 +43,7 @@ export const BasketCard = ({ data, count }: IProps) => {
       <div className='ml-6 flex-grow flex-col pb-6'>
         <h4 className='mb-2 text-lg font-[500]'>{title}</h4>
         <span className='text-sm font-[500] text-[#838383]'>{formatPrice(price)}</span>
+        {priceBeforeDiscount && <span className='ml-4 text-[11px] font-[500] text-[#838383] line-through'>{formatPrice(price)}</span>}
       </div>
 
       <div className='flex h-full flex-col justify-between'>

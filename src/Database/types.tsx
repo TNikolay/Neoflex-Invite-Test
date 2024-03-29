@@ -3,6 +3,7 @@ export interface IProduct {
   img: string
   title: string
   price: number
+  priceBeforeDiscount?: number
   rate: number
 }
 
