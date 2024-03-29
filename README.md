@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+# Тестовое задание для Neoflex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Стек
 
-Currently, two official plugins are available:
+React, React router, Zustand, Tailwind, shadcn/ui
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Тестовое задание
 
-## Expanding the ESLint configuration
+1. Необходимо разработать используя React, React Router, две страницы интернет-магазина
+   аудио аксессуаров. Первая страница –каталог товаров, вторая – корзина с приобретенными
+   товарами; (Использование TS приветствуется). Для стилизации можете выбрать любой
+   подход. (css, sass, styled-components, и т.д). Компоненты желательно продумывать с
+   дальнейшим переиспользованием.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Необходимо реализовать удобный и масштабируемый роутинг;
 
-- Configure the top-level `parserOptions` property like this:
+3. Все элементы ссылок, иконок, должны отзываться при наведении на них (будет плюсом
+   переход на какие либо соц-сети или вызов несуществующего номера)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+4. Реализовать переход с корзины обратно домой (через logo или кнопкой возврата);
+   Макет доступен по ссылке [Neoflex Invite Test (Copy) (Copy) – Figma](<https://www.figma.com/file/qw44OPediu3iquaSvkLtqa/Neoflex-Invite-Test-(Copy)-(Copy)?type=design&node-id=0-1&mode=design&t=WP7mxDBiy2HmvgZv-0>)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+5. При нажатии на «Купить» в карточке на первой странице счетчик товаров рядом с
+   иконкой корзины должен увеличиваться
+
+6. При изменении количества товаров в корзине, сумма и кол-во товаров должна изменяться
+
+7. Обязательным условием является хранение данных о каждом товаре в виде элемента массива. И подстановка данных в карточки товара из полученных данных этого массива.
+
+Для передачи информации о выбранных в корзину позиций можно использовать SessionStorage.
+
+После выполнения обязательных 7 пунктов можете перейти к дополнительному списку
+улучшений:
+
+- Чистка кода, рефакторинг, работа над улучшением производительности;
+- Адаптивность на все устройства;
+- Возможность удалять карточку товара из корзины товаров;
+- Реализовать «Переход к оформлению» на отдельную страницу с формой оплаты или
+  модальное окно с формой оплаты;
+- Реализовать модальное окно с подробной информацией о товаре, добавить в карточку
+  иконку просмотра на свой выбор, которая будет открывать данное модальное окно;
+
+ПРИМЕЧАНИЕ: Приступать к выполнению данных пунктов только после
+выполнения основных требований тестового задания, если остается время !
+Выполнение данных пунктов будет лишь плюсом, а не основным
+требованием! Всем желаю удачи, вы сможете это сделать :)
