@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/neoflex-invite-test/',
   plugins: [react()],
   resolve: {
     alias: {
