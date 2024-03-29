@@ -1,13 +1,17 @@
 import { IProduct } from '@/Database/types'
-import { Link } from 'react-router-dom'
+import { formatPrice } from '@/lib/utils'
+import { useBasketStore } from '@/store/basketStore'
+import { Button } from './ui/button'
 
 interface IProps {
   readonly data: IProduct
 }
 
 export const ProductCard = ({ data }: IProps) => {
-  const { title, price, rate } = data
+  const { id, title, price, rate } = data
   const img = `./ProductsImages/${data.img}.png`
+
+  const addProduct = useBasketStore((state) => state.addProduct)
 
   return (
     <div className='hover:border-1 flex h-[407px] w-[350px] flex-col items-center rounded-[30px] border bg-white px-5 py-2 text-xl font-bold hover:scale-110 hover:border-black'>
@@ -16,7 +20,7 @@ export const ProductCard = ({ data }: IProps) => {
       <div className='my-6 flex w-full justify-between'>
         <h2>{title}</h2>
 
-        <span className='text-[#FFB800]'>{price} ₽</span>
+        <span className='text-[#FFB800]'>{formatPrice(price)}</span>
       </div>
 
       <div className='mb-6 flex w-full justify-between'>
@@ -27,9 +31,9 @@ export const ProductCard = ({ data }: IProps) => {
           {rate}
         </div>
 
-        <Link to='' onClick={() => console.log(title)}>
+        <Button variant={'ghost'} onClick={() => addProduct(id)} className='text-lg font-[600] active:bg-orange-400'>
           Купить
-        </Link>
+        </Button>
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ export const ProductCategory = ({ data }: IProps) => {
 
       <div className='flex flex-wrap gap-6'>
         {products.map((product) => (
-          <ProductCard data={product} />
+          <ProductCard data={product} key={product.id} />
         ))}
       </div>
     </div>

@@ -1,4 +1,5 @@
 export interface IProduct {
+  id: string
   img: string
   title: string
   price: number
@@ -11,3 +12,5 @@ export interface ICategory {
 }
 
 export type IDatabase = ICategory[]
+
+export type IBasketItem = Map<string, number>
