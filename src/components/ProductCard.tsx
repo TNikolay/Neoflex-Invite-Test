@@ -1,20 +1,28 @@
 import { IProduct } from '@/Database/types'
+import { Button } from '@/components/ui/button'
 import { formatPrice } from '@/lib/utils'
 import { useBasketStore } from '@/store/basketStore'
-import { Button } from './ui/button'
+import { useFavoritesStore } from '@/store/favoritesStore'
+import { Heart } from 'lucide-react'
 
 interface IProps {
   readonly data: IProduct
+  readonly isFavorite: boolean
 }
 
-export const ProductCard = ({ data }: IProps) => {
+export const ProductCard = ({ data, isFavorite }: IProps) => {
   const { id, title, price, rate, priceBeforeDiscount } = data
   const img = `./ProductsImages/${data.img}.png`
 
   const addProduct = useBasketStore((state) => state.addProduct)
+  const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite)
 
   return (
-    <div className='hover:border-1 flex h-[407px] w-[350px] flex-col items-center rounded-[30px] border bg-white px-5 py-2 text-xl font-bold hover:scale-110 hover:border-black'>
+    <div className='hover:border-1 flex h-[407px] w-[350px] flex-col items-center rounded-[30px] border bg-white px-5 py-2 text-xl font-bold hover:scale-110 hover:border-[#FFB800]'>
+      <div className='absolute mt-4 self-end' onClick={() => toggleFavorite(id)}>
+        <Heart color={isFavorite ? '#FFB800' : '#838383'} size={24} className='hover:opacity-60' fill={isFavorite ? '#FFB800' : 'none'} />
+      </div>
+
       <img src={img} className='my-auto' alt={title} />
 
       <div className='mt-6 flex w-full justify-between'>

@@ -10,6 +10,7 @@ function App() {
       <Route path={`${BASE_URL}/`} element={<Layout />}>
         <Route index element={<pages.MainPage />} />
         <Route path='basket' element={<pages.BasketPage />} />
+        <Route path='favorites' element={<pages.FavoritesPage />} />
         <Route path='*' element={<pages.NotFoundPage />} />
       </Route>
     )

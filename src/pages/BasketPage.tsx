@@ -22,7 +22,7 @@ export const BasketPage = () => {
       <h2 className='py-5 text-xl font-[600]'>Корзина</h2>
 
       <div className='flex justify-between'>
-        <div className='flex flex-col gap-6'>{productCards}</div>
+        <div className='flex flex-col gap-6'>{productCards.length > 0 ? productCards : <p>Вы у нас еще ничего не выбрали, просто ходите тут, смотрите... :(</p>}</div>
 
         <div className='flex h-[114px] w-[348px] flex-shrink-0 flex-col '>
           <div className='flex justify-between rounded-3xl bg-white px-8 pb-10 pt-4 font-[600]'>
